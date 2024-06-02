@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom"
+import { Button } from "../components/Button";
+
 export const Landing = () => {
+    const navigate = useNavigate(); 
     return <div className="flex justify-center">
         <div className="pt-8 max-w-screen-lg">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -11,10 +15,12 @@ export const Landing = () => {
                             Play Chess Online
                         </h1>
                     </div>
-                    <div className="mt-4 flex justify-center">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl py-4 px-8 rounded">
+                    <div className="mt-8 flex justify-center">
+                        <Button onClick={() => {
+                            navigate("/game")
+                        }}>
                             Play Online
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
